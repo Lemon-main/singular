@@ -1,0 +1,34 @@
+[package]
+license = "MIT/Apache-2.0"
+name = "singular"
+version = "0.0.1"
+
+[lib]
+crate-type = ["lib", "staticlib"]
+
+[features]
+default = ["multicore"]
+multicore = ["reception/multicore"]
+plonk = ["reception/plonk"]
+ 
+[dependencies]
+rand = "0.4"
+digest = "0.7"
+byteorder = "1"
+serde = "1.0.80"
+serde_derive = "1.0.80"
+tiny-keccak = "1.4.2"
+bit-vec = "0.6"
+sha2 = "0.8.0"
+hmac = "0.7.1"
+num-bigint = "0.2"
+num-integer = "0.1"
+num-traits = "0.2"
+
+reception = { package = "reception", git = "https://github.com/Lemon-main/reception", branch = "master" }
+blake2-rfc_bellman_edition = "0.0.1"
+
+[dev-dependencies]
+hex-literal = "0.1"
+hex = "*"
+
